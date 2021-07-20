@@ -9,10 +9,24 @@ function App() {
   Define state variables for 
   contacts and appointments 
   */
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState([/* {
+    name: "tony",
+    phone: "123456",
+    email: "luvluv@gmail.com",
+  },
+  {
+    name: "tttony",
+    phone: "666666",
+    email: "luv6v@gmail.com",
+  },
+  {
+    name: "dony",
+    phone: "888988",
+    email: "luv8888@gmail.com",
+  } */]);
   const [appointments, setAppointments] = useState([{
     title: "MyFirstAppointments",
-    contact: contacts,
+    contact: "contact",
     date: "DateMonthYear",
     time: "atXOclock"
   }]);
@@ -28,18 +42,18 @@ function App() {
   contacts and appointments
   */
   const addContacts = (newContacts) => {
-    
+
     setContacts((prev) => [
       newContacts,
       ...prev
     ]);
-    
+
     //contacts.map((item) => console.log(`each contact = ${item}`));
-    
+
 
   };
 
-  const addAppointment = ({ newAppointment }) => {
+  const addAppointment = (newAppointment) => {
     setAppointments((prev) => [
       newAppointment,
       ...prev
@@ -63,19 +77,19 @@ function App() {
           </Route>
           <Route path={ROUTES.CONTACTS}>
             {/* Add props to ContactsPage */}
-            <ContactsPage 
+            <ContactsPage
               value={contacts}
               onAddContacts={addContacts}
-              />
-              
+            />
+
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
             {/* Add props to AppointmentsPage */}
-            {/* <AppointmentsPage 
+            {<AppointmentsPage
               value={appointments}
-              valueContacts={contacts}
+              contacts={contacts}
               onAddAppointments={addAppointment}
-            /> */}
+            />}
           </Route>
         </Switch>
       </main>

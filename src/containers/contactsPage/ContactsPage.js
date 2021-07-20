@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ContactForm } from "../../components/contactForm/ContactForm";
 import { TileList } from "../../components/tileList/TileList"
 export const ContactsPage = (props) => {
@@ -10,6 +10,7 @@ export const ContactsPage = (props) => {
 
 
   const [textName, setTextName] = useState('');
+  
   const handleTextName = (e) => {
     setTextName(e.target.value);
   };

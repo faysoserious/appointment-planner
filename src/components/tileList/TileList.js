@@ -6,13 +6,12 @@ export const TileList = (props) => {
   return (
     <div>
       {
-        props.contacts.map((item, i) => {
-
+        props.contacts.map((item) => {
+          
           return (
+            
             <Tile
-              className='tile-list'
               tile={item}
-              key={i}
             />
           )
 
