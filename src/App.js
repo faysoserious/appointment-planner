@@ -9,14 +9,7 @@ function App() {
   Define state variables for 
   contacts and appointments 
   */
-  const [contacts, setContacts] = useState([
-    {
-      name: "Katty",
-      phoneNumber: "123456",
-      email: "thisMyEmail@gmail.com"
-    }
-
-  ]);
+  const [contacts, setContacts] = useState([]);
   const [appointments, setAppointments] = useState([{
     title: "MyFirstAppointments",
     contact: contacts,
@@ -34,12 +27,15 @@ function App() {
   Implement functions to add data to
   contacts and appointments
   */
-  const addContacts = ({ newContact }) => {
-    const { name, phoneNumber, email } = newContact;
+  const addContacts = (newContacts) => {
+    
     setContacts((prev) => [
-      newContact,
+      newContacts,
       ...prev
     ]);
+    
+    //contacts.map((item) => console.log(`each contact = ${item}`));
+    
 
   };
 
@@ -71,14 +67,15 @@ function App() {
               value={contacts}
               onAddContacts={addContacts}
               />
+              
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
             {/* Add props to AppointmentsPage */}
-            <AppointmentsPage 
+            {/* <AppointmentsPage 
               value={appointments}
               valueContacts={contacts}
               onAddAppointments={addAppointment}
-            />
+            /> */}
           </Route>
         </Switch>
       </main>
