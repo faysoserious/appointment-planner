@@ -6,10 +6,11 @@
 nav > a {
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 18px;
   color: #000000;
   margin-right: 30.5px;
   text-decoration-line: none;
+  
 }
 
 nav > a.active {
@@ -20,18 +21,41 @@ nav {
   padding-bottom: 20px;
   border-bottom: 1px solid #979797;
   margin-bottom: 20px;
+  display: flex;
+}
+
+
+.page-container {
+  display:flex;
+  justify-content: space-around;
+}
+
+.new-entry {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 2rem;
+  flex: 1 1 40%;
+  
+  
+}
+
+.display {
+  margin: 0 auto;
+  padding: 0 2rem;
+  flex: 1 1 50%;
+  border-left: 2px solid grey;
 }
 
 h2 {
   font-weight: bold;
-  font-size: 18px;
-  color: #000000;
+  font-size: 30px;
+  color: black;
   margin: 0;
   margin-bottom: 18px;
+  text-align: center;
 }
 
-section {
-}
+
 
 hr {
   border: none;
@@ -68,15 +92,96 @@ select {
 }
 
 .tile {
-  margin: 0;
-  font-size: 14px;
-  margin-bottom: 4px;
+  margin: 0 auto;
+  font-size: 18px;
+  margin-bottom: 1rem;
+  padding: 0 4rem;
+  
 }
 
-.tile.tile-title {
+.tile-title {
+  margin: 0 0 1rem 0;
+  font-size: 20px;
   font-weight: bold;
+  border-bottom: 1px solid goldenrod;
+  font-style: italic;
+  padding: 1rem;
+}
+
+p.tile-title {
+  color: burlywood;
 }
 
 .tile-container {
+  padding: 0 2rem;
   margin-bottom: 20px;
+  background-color: beige;
+  border: 1px solid beige;
+  
+}
+
+.tile-list{
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen 
+  and (min-device-width: 375px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    .page-container {
+      display:flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .new-entry {
+      padding: 2rem;
+    }
+    .display {
+      padding: 2rem;
+      border-left: none;
+    }
+
+}
+
+@media only screen 
+  and (max-device-width: 375px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    #root {
+      padding: 2rem 0;
+    }
+    nav {
+      width: 100%;
+    }
+
+    .page-container {
+      width: 100%;
+    }
+    .page-container {
+      display: flex;
+      flex-direction: column;
+    }
+    .new-entry {
+      width: 100%;
+      padding: 2rem 0;
+    }
+    .display {
+      width: 100%;
+      padding: 2rem 0;
+      border-left: none;
+    }
+
+    input,
+    select {
+      
+      width: 80%;
+      
+    }
+
+    input[type="submit"] {
+      width: 80%;
+    }
+
 }

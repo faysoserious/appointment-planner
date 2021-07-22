@@ -66,10 +66,11 @@ export const ContactsPage = (props) => {
   */
 
   return (
-    <div>
-      <section>
+    <div className="page-container">
+      <section className="new-entry">
         <h2>Add Contact</h2>
         <ContactForm
+          className="form"
           name={textName}
           setName={handleTextName}
           phone={textPhone}
@@ -80,9 +81,11 @@ export const ContactsPage = (props) => {
         />
       </section>
       <hr />
-      <section>
+      <section className="display">
         <h2>Contacts</h2>
-        <TileList contacts={props.value} />
+        <TileList 
+        contacts={props.value}
+        className="list" />
       </section>
     </div>
   );

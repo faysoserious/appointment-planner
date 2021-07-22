@@ -7,12 +7,7 @@ export const AppointmentsPage = (props) => {
   Define state variables for 
   appointment info
   */
-  /* const [newAppointment, setNewAppointment] = useState({
-    title: '',
-    contact: '',
-    date: '',
-    time: ''
-  }); */
+  
   const [title, setTitle] =useState('');
   const handleTitle = (e) => {
     setTitle(e.target.value);
@@ -51,10 +46,11 @@ export const AppointmentsPage = (props) => {
   };
 
   return (
-    <div>
-      <section>
+    <div className="page-container">
+      <section className="new-entry">
         <h2>Add Appointment</h2>
         <AppointmentForm 
+          className="form"
           contacts={props.contacts}
           title={title}
           setTitle={handleTitle}
@@ -68,9 +64,9 @@ export const AppointmentsPage = (props) => {
           />
       </section>
       <hr />
-      <section>
+      <section className="display">
         <h2>Appointments</h2>
-        <TileList contacts={props.value}/>
+        <TileList contacts={props.value} className="list"/>
       </section>
     </div>
   );

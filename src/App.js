@@ -24,12 +24,12 @@ function App() {
     phone: "888988",
     email: "luv8888@gmail.com",
   } */]);
-  const [appointments, setAppointments] = useState([{
+  const [appointments, setAppointments] = useState([/* {
     title: "MyFirstAppointments",
     contact: "contact",
     date: "DateMonthYear",
     time: "atXOclock"
-  }]);
+  } */]);
 
 
   const ROUTES = {
@@ -63,10 +63,10 @@ function App() {
   return (
     <>
       <nav>
-        <NavLink to={ROUTES.CONTACTS} activeClassName="active">
+        <NavLink to={ROUTES.CONTACTS} activeClassName="active" >
           Contacts
         </NavLink>
-        <NavLink to={ROUTES.APPOINTMENTS} activeClassName="active">
+        <NavLink to={ROUTES.APPOINTMENTS} activeClassName="active" >
           Appointments
         </NavLink>
       </nav>
@@ -78,6 +78,7 @@ function App() {
           <Route path={ROUTES.CONTACTS}>
             {/* Add props to ContactsPage */}
             <ContactsPage
+              className="contact-page"
               value={contacts}
               onAddContacts={addContacts}
             />
@@ -86,6 +87,7 @@ function App() {
           <Route path={ROUTES.APPOINTMENTS}>
             {/* Add props to AppointmentsPage */}
             {<AppointmentsPage
+              className="appointment-page"
               value={appointments}
               contacts={contacts}
               onAddAppointments={addAppointment}
